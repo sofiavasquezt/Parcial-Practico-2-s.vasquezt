@@ -1,0 +1,23 @@
+<div class="container">
+  <div class="row" style="background-color:#1745dc; color:white;  width: 200px;" >Pacientes</div>
+  <table style="border: 1px solid rgb(255, 255, 255);" class="table-sm" id="serie">
+    <thead>
+      <tr>
+        <th>Nombre</th>
+        <th>Edad</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let paciente of pacientes; let i = index" (click)="selectPaciente(paciente)">
+        <td style="background-color:  #dde3e8; border: 1px solid #ffffff;">{{ paciente.nombre }}</td>
+        <td style="background-color:  #dde3e8; border: 1px solid #ffffff;">{{ paciente.edad }}</td>
+
+      </tr>
+    </tbody>
+  </table>
+  
+  <p style="color: solid black;">Numero de menores: {{ totalMenores }}</p>
+  <div style="float: right; margin-top: -250px; margin-right: 800px;">
+    <app-pacientes-detail [selectedPaciente]="selectedPaciente"></app-pacientes-detail>
+  </div>
+</div>
